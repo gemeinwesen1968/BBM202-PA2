@@ -6,9 +6,6 @@ import java.util.Scanner;
 
 public class MinShipsGP {
     private final ArrayList<Integer> artifactsFound = new ArrayList<>();
-    // Weight of artifacts as list will be provided in the input file, and the list
-    // should be populated using this format.
-    // [3,2,3,4,5,4]
 
     public void readInput(String path) throws FileNotFoundException {
         Scanner scanner = new Scanner(new File(path));

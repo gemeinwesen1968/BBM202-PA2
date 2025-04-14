@@ -18,7 +18,6 @@ public class OptimalShipSolution {
     }
 
     public void printSolution(OptimalShipSolution solution) {
-        // Print your OptimalShipSolution object in the format provided in the assignment pdf.
         System.out.println("Minimum spaceships required: " + solution.getSolution());
         System.out.println("For the artifact set of :" + solution.getArtifactSet());
     }
