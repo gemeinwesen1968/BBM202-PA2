@@ -24,6 +24,12 @@ public class MinShipsGP {
         this.artifactsFound.addAll(artifactsFound);
     }
 
+    // sorts the values reversely
+    // max amount of spaceship is the amount of the artifacts found
+    // optimal solution is the amount of non-zero spaceships in the array
+    // starting with the largest:
+    //      if there is enough storage -> add to the current spaceship
+    //      if not -> try with next spaceship
     public OptimalShipSolution optimalArtifactCarryingAlgorithm()  {
         final int maxC = 100;
         int N = getArtifactsFound().size();

@@ -30,6 +30,15 @@ public class MaxScrollsDP {
         return safesDiscovered;
     }
 
+    // stores the optimal solution for minute/safe i and knowledge t in matrix position v[i][k]
+    // max amount of knowledge is 5 * amount of safes discovered
+    // unrelated or unreachable states are stored as -1 (also unsolved ones except v[0][0] = 0)
+    // options of any state:
+    //      gain knowledge ->   v[i+1][k+5] = max(v[i+1][k+5], v[i][k])
+    //      read scrolls ->     v[i+1][k-c] = max(v[i+1][k-c], v[i][k]+s)
+    //      do nothing ->       v[i+1][k] = max(v[i+1][k], v[i][k])
+    //  where k is knowledge, i is time, c is complexity of safe, s is amount of scrolls
+    // the solution is the max state for last minute
     public OptimalScrollSolution optimalSafeOpeningAlgorithm() {
         int T = safesDiscovered.size();
         int maxK = 5 * T;
